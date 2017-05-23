@@ -1,0 +1,26 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "best blog ever",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joey Biotti",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^1.0.1",
+    "sass": "^0.5.0"
+  }
+}
