@@ -2,38 +2,16 @@
 
 console.log("main.js");
 
-let $ = require("jquery");
-let posts = new new XMLHttpRequest();
+let $ = require('jquery');
 
-posts.addEventListener("load", postComplete);
-posts.addEventListener("error", postFailed);
+let Handlebars = require('hbsfy/runtime'),
+	postTemplate = require('../javascripts/posts.js'),
+	postData = require('../templates/post-data.js');
 
-function postComplete (event) {
-	console.log("blog posts loaded");
-	var data = JSON.parse(event.target.responseText);
-	console.log("the data that loaded was ", data);
+Handlebars.registerHelper("increment", (value)=> parseInt(value) + 1);
 
-	makePost(data);
+// $("#post-area").append(postTemplate(postData));
+
+function populatePage(things){
+	let postDiv = document.createElement("div");
 }
-
-function postFailed (event){
-	console.log("posts failed to load");
-}
-
-posts.open("GET", posts.json);
-posts.send();
-
-function makePost(post){
-	let postArea = $("#post-area");
-	let postData = "";
-
-	for(blogPost in posts){
-		blogEntry = posts[blogPost];
-	postData += "<div>";
-	postData += "<h2>" + blogEntry.entry + "</h2>";
-	postData += "<p>" + blogEntry.post + "</p>"
-	postData += "</div>"
-	}
-}
-
-module.exports = {postComplete, postFailed, makePost}
